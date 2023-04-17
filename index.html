@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+</head>
+<h1 id="title">Calculator 🔢</h1>
+<body>
+    <div class="calculator">
+        <form action="index.html" name="form" id="formId">
+            <div class="screen">
+                <input class="answer-top" type="text" name="calculation">
+                <div class="answer">
+                    <input class="sign" type="text" name="sign">
+                    <input class="ans" value="0" type="text" name="ans">
+                </div>
+            </div>
+            <div class="button">
+                <button class="ce" value=""
+                    onclick="form.calculation.value=form.calculation.value.substring(0,form.calculation.value.length-1),form.calculation.value==''?form.ans.value='':''">CE</button>
+                <button class="number" value=""
+                    onclick="form.calculation.value='',form.sign.value='',form.ans.value=''">C</button>
+                <button class="number" value="%"
+                    onclick="form.calculation.value[form.calculation.value.length-1]=='%'? form.calculation.value:form.calculation.value+='%',form.sign.value='%'">%</button>
+                <button class="operator" value="/"
+                    onclick="form.calculation.value[form.calculation.value.length-1]=='/'? form.calculation.value:form.calculation.value+='/',form.sign.value='/'">&divide;</button>
+                <button class="number" value="7" onclick="form.calculation.value+='7'">7</button>
+                <button class="number" value="8" onclick="form.calculation.value+='8'">8</button>
+                <button class="number" value="9" onclick="form.calculation.value+='9'">9</button>
+                <button class="operator" value="*"
+                    onclick="form.calculation.value[form.calculation.value.length-1]=='*'? form.calculation.value:form.calculation.value+='*',form.sign.value='*'">&times;</button>
+                <button class="number" value="4" onclick="form.calculation.value+='4'">4</button>
+                <button class="number" value="5" onclick="form.calculation.value+='5'">5</button>
+                <button class="number" value="6" onclick="form.calculation.value+='6'">6</button>
+                <button class="operator" value="-"
+                    onclick="form.calculation.value[form.calculation.value.length-1]=='-'? form.calculation.value:form.calculation.value+='-',form.sign.value='-'">&minus;</button>
+                <button class="number" value="1" onclick="form.calculation.value+='1'">1</button>
+                <button class="number" value="2" onclick="form.calculation.value+='2'">2</button>
+                <button class="number" value="3" onclick="form.calculation.value+='3'">3</button>
+                <button class="operator" value="+"
+                    onclick="form.sign.value='+',form.calculation.value[form.calculation.value.length-1]=='+'? form.calculation.value:form.calculation.value+='+'">&plus;</button>
+                <button class="number" value="+" onclick="form.calculation.value+='+'">&plus; &#8725; &minus;</button>
+                <button class="number" value="0" onclick="form.calculation.value+='0'">0</button>
+                <button class="number" value="."
+                    onclick="form.calculation.value[form.calculation.value.length-1]=='.'? form.calculation.value:form.calculation.value+='.'">.</button>
+                <button class="equal" value="=" onclick="form.sign.value='=',
+                    form.calculation.value==''?form.ans.value='':
+                    form.ans.value=eval(form.calculation.value)">&equals;</button>
+            </div>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+<footer>
+    Made with ❤️ by Aditya.
+  </footer>
+</html>
